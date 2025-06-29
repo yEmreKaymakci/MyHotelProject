@@ -1,8 +1,24 @@
+using HotelProject.BusinessLayer.Abstract;
+using HotelProject.BusinessLayer.Concrete;
+using HotelProject.DataAccessLayer.Abstract;
+using HotelProject.DataAccessLayer.Concrete;
+using HotelProject.DataAccessLayer.EntityFramework;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+
 builder.Services.AddControllers();
+
+builder.Services.AddDbContext<Context>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
+);
+builder.Services.AddScoped<IStaffDal, EfStaffDal>();
+builder.Services.AddScoped<IStaffService, StaffManager>();
+
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -15,6 +31,15 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseAuthorization();
+
+app.MapControllers();
+
+app.Run();
+
+//// HTTPS yönlendirmesi ekledim
+app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
