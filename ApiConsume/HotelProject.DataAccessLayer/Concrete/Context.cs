@@ -10,9 +10,13 @@ namespace HotelProject.DataAccessLayer.Concrete
 {
     public class Context : DbContext
     {
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    optionsBuilder.UseSqlServer("server=DESKTOP-NH5EP7F\\YUNUSSQLSERVER;initial catalog=ApiDb;integrated security=true");
+        //}
+
+        public Context(DbContextOptions<Context> options) : base(options)
         {
-            optionsBuilder.UseSqlServer("server=DESKTOP-NH5EP7F\\YUNUSSQLSERVER;initial catalog=ApiDb;integrated security=true");
         }
 
         public DbSet<Room> Rooms { get; set; }
