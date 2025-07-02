@@ -1,0 +1,40 @@
+[33mcommit 4d7f90f71c1b1e3c0d829577acaf7f5be5619915[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: yEmreKaymakci <yunusemrekymkci@gmail.com>
+Date:   Tue Jul 1 05:02:40 2025 +0300
+
+    Add StaffViewModel and update StaffController
+    Configure routing in Program.cs and update frontend views (_ViewImports, Index)
+
+[33mcommit 33c50ad20d07c9d3218ec4d96b7088b6fef557da[m
+Author: yEmreKaymakci <yunusemrekymkci@gmail.com>
+Date:   Mon Jun 30 03:44:31 2025 +0300
+
+    Document API Controllers via Swagger
+    Add partial views and configure AdminLayoutController for frontend integration
+
+[33mcommit 32afdb4430277c21d18754106ba36a20495715e9[m
+Author: yEmreKaymakci <yunusemrekymkci@gmail.com>
+Date:   Sun Jun 29 04:53:45 2025 +0300
+
+    Add Manager classes to Business layer
+    Implement EF repositories in DataAccess layer
+    Start adding Controllers to WebAPI layer
+
+[33mcommit 92bf6a70a457fc8c2d4490ee9b5e1a1cf4148b07[m
+Author: yEmreKaymakci <yunusemrekymkci@gmail.com>
+Date:   Sat Jun 28 03:04:29 2025 +0300
+
+    Initialize project structure with layered architecture: Business, Access, Entity, DTO, and WebAPI.
+    Implemented entity classes and created corresponding repositories in Access layer.
+
+[33mcommit 1f1d5bf482b954a9d8e5f6521a0bff5de133b703[m
+Author: yEmreKaymakci <yunusemrekymkci@gmail.com>
+Date:   Fri Jun 27 10:33:35 2025 +0300
+
+    Add project files.
+
+[33mcommit 2fb503dc7959a174098d3589133cf9119e139934[m
+Author: yEmreKaymakci <yunusemrekymkci@gmail.com>
+Date:   Fri Jun 27 10:33:33 2025 +0300
+
+    Add .gitattributes and .gitignore.
