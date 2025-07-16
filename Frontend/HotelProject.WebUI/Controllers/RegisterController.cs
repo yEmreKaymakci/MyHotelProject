@@ -39,6 +39,15 @@ namespace HotelProject.WebUI.Controllers
             {
                 return RedirectToAction("Index", "Login");
             }
+            else
+            {
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError("", error.Description); // View'da görebilirsin
+                    Console.WriteLine(error.Description);            // Debug ekranına yazdır
+                }
+                return View(createNewUserDto);
+            }
             return View();
         }
     }
