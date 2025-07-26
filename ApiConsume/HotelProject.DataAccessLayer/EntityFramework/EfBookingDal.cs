@@ -14,7 +14,8 @@ namespace HotelProject.DataAccessLayer.EntityFramework
     {
         public EfBookingDal(Context context) : base(context)
         {
-
         }
+
+        // Insert metodunu kaldırın, GenericRepository'deki kullanılsın
     }
 }

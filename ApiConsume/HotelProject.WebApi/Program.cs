@@ -72,8 +72,6 @@ app.UseHttpsRedirection();
 
 app.UseCors("OtelApiCors");
 
-app.UseAuthorization();
-
 app.MapControllers();
 
 app.Run();

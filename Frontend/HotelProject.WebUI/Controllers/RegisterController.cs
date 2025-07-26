@@ -48,7 +48,6 @@ namespace HotelProject.WebUI.Controllers
                 }
                 return View(createNewUserDto);
             }
-            return View();
         }
     }
 }

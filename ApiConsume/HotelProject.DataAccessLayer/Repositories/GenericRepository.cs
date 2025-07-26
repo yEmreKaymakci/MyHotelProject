@@ -25,7 +25,13 @@ namespace HotelProject.DataAccessLayer.Repositories
 
         public T GetByID(int id)
         {
-            return _context.Set<T>().Find(id);
+            // Ensure the method matches the nullability contract of the interface
+            var entity = _context.Set<T>().Find(id);
+            if (entity == null)
+            {
+                throw new InvalidOperationException($"Entity of type {typeof(T).Name} with ID {id} was not found.");
+            }
+            return entity;
         }
 
         public List<T> GetList()
@@ -33,7 +39,7 @@ namespace HotelProject.DataAccessLayer.Repositories
             return _context.Set<T>().ToList();
         }
 
-        public void Insert(T t)
+        public virtual void Insert(T t) // virtual ekleyin
         {
             _context.Add(t);
             _context.SaveChanges();

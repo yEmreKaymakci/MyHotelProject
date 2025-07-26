@@ -3,6 +3,7 @@ using HotelProject.EntityLayer.Concrete;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
+
 namespace HotelProject.WebApi.Controllers
 {
     [Route("api/[controller]")]
@@ -24,9 +25,22 @@ namespace HotelProject.WebApi.Controllers
         [HttpPost]
         public IActionResult AddBooking(Booking booking)
         {
-            _bookingService.TInsert(booking);
-            return Ok();
+            if (booking == null)
+            {
+                return BadRequest("Booking verileri eksik");
+            }
+
+            try
+            {
+                _bookingService.TInsert(booking);
+                return Ok(new { success = true, message = "Rezervasyon başarıyla kaydedildi" });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { success = false, message = "Rezervasyon kaydedilemedi", error = ex.Message });
+            }
         }
+
         [HttpDelete("{id}")]
         public IActionResult DeleteBooking(int id)
         {
@@ -37,7 +51,7 @@ namespace HotelProject.WebApi.Controllers
         [HttpPut]
         public IActionResult UpdateBooking(Booking booking)
         {
-            _bookingService.TUpdate(booking );
+            _bookingService.TUpdate(booking);
             return Ok();
         }
         [HttpGet("{id}")]
