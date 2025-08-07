@@ -1,0 +1,22 @@
+﻿@model List<BookingApiLocationSearchViewModel.LocationItem>
+@{
+    Layout = null;
+}
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<div class="container mt-5">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Lokasyon ID</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.dest_id</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
