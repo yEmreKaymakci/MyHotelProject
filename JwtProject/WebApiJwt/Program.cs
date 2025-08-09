@@ -14,11 +14,12 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
     opt.RequireHttpsMetadata = false;
     opt.TokenValidationParameters = new TokenValidationParameters()
     {
-        ValidIssuer = "https://localhost",
-        ValidAudience = "https://localhost",
+        ValidIssuer = "http://localhost",
+        ValidAudience = "http://localhost",
         IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("aspnetcoreapiapiaspnetcoreapiapi")),
         ValidateIssuerSigningKey = true,
         ValidateLifetime = true,
+        ClockSkew = TimeSpan.Zero // Token'un geçerlilik süresi için saat kaymasýný sýfýrla
     };
 }
 );
