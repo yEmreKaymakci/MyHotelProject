@@ -1,6 +1,10 @@
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using HotelProject.DataAccessLayer.Concrete;
 using HotelProject.EntityLayer.Concrete;
+using HotelProject.WebUI.Dtos.GuestDto;
 using HotelProject.WebUI.Mapping;
+using HotelProject.WebUI.ValidationRules.GuestValidationRules;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,7 +18,18 @@ builder.Services.AddDbContext<Context>(options =>
 });
 
 builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>();
-builder.Services.AddControllersWithViews();
+
+builder.Services.AddFluentValidationAutoValidation(config =>
+{
+    config.DisableDataAnnotationsValidation = true;
+});
+
+builder.Services.AddFluentValidationClientsideAdapters();
+
+builder.Services.AddScoped<IValidator<CreateGuestDto>, CreateGuestValidator>();
+builder.Services.AddScoped<IValidator<UpdateGuestDto>, UpdateGuestValidator>();
+
+builder.Services.AddControllersWithViews(); 
 builder.Services.AddHttpClient();
 builder.Services.AddAutoMapper(typeof(AutoMapperConfig));
 
