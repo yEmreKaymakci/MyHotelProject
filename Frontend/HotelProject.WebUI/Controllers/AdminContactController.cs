@@ -1,5 +1,6 @@
 ﻿using System.Text;
 using HotelProject.WebUI.Dtos.ContactDto;
+using HotelProject.WebUI.Dtos.SendMessageDto;
 using HotelProject.WebUI.Models.Staff;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -33,15 +34,18 @@ namespace HotelProject.WebUI.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> AddSendMessage(AddStaffViewModel model)
+        public async Task<IActionResult> AddSendMessage(CreateSendMessage createSendMessage)
         {
+            createSendMessage.SenderMail = "admin@gmail.com";
+            createSendMessage.SenderName = "admin";
+            createSendMessage.Date = DateTime.Parse(DateTime.Now.ToShortDateString());
             var client = _httpClientFactory.CreateClient();
-            var jsonData = JsonConvert.SerializeObject(model);
+            var jsonData = JsonConvert.SerializeObject(createSendMessage);
             StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
-            var responseMessage = await client.PostAsync("http://localhost:5297/api/Staff", stringContent);
+            var responseMessage = await client.PostAsync("http://localhost:5297/api/SendMessage", stringContent);
             if (responseMessage.IsSuccessStatusCode)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("SendBox");
             }
             return View();
         }
