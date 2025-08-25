@@ -28,6 +28,19 @@ namespace HotelProject.WebUI.Controllers
             }
             return View();
         }
+        public async Task<IActionResult> SendBox()
+        {
+            var client = _httpClientFactory.CreateClient();
+            var responseMessage = await client.GetAsync("http://localhost:5297/api/SendMessage");
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                var jsonData = await responseMessage.Content.ReadAsStringAsync();
+                var values = JsonConvert.DeserializeObject<List<ResultSendBoxDto>>(jsonData);
+                return View(values);
+            }
+            return View();
+        }
+
         [HttpGet]
         public IActionResult AddSendMessage()
         {
@@ -56,6 +69,19 @@ namespace HotelProject.WebUI.Controllers
         public PartialViewResult SideBarAdminContactCategoryPartial()
         {
             return PartialView();
+        }
+        public IActionResult MessageDetails(int id)
+        {
+            id = 0;
+            //var client = _httpClientFactory.CreateClient();
+            //var responseMessage = client.GetAsync($"http://localhost:5297/api/Contact/{id}").Result;
+            //if (responseMessage.IsSuccessStatusCode)
+            //{
+            //    var jsonData = responseMessage.Content.ReadAsStringAsync().Result;
+            //    var values = JsonConvert.DeserializeObject<InboxContactDto>(jsonData);
+            //    return View(values);
+            //}
+            return View();
         }
     }
 }
