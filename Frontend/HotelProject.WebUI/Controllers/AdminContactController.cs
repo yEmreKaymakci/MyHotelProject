@@ -70,17 +70,30 @@ namespace HotelProject.WebUI.Controllers
         {
             return PartialView();
         }
-        public IActionResult MessageDetails(int id)
+        public async Task<IActionResult> MessageDetails(int id)
         {
             id = 0;
-            //var client = _httpClientFactory.CreateClient();
-            //var responseMessage = client.GetAsync($"http://localhost:5297/api/Contact/{id}").Result;
-            //if (responseMessage.IsSuccessStatusCode)
-            //{
-            //    var jsonData = responseMessage.Content.ReadAsStringAsync().Result;
-            //    var values = JsonConvert.DeserializeObject<InboxContactDto>(jsonData);
-            //    return View(values);
-            //}
+            var client = _httpClientFactory.CreateClient();
+            var responseMessage = await client.GetAsync("http://localhost:5297/api/SendMessage/{id}");
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                var jsonData = await responseMessage.Content.ReadAsStringAsync();
+                var values = JsonConvert.DeserializeObject<List<GetMessageByIDDto>>(jsonData);
+                return View(values);
+            }
+            return View();
+        }
+        public async Task<IActionResult> MessageDetails(int id)
+        {
+            id = 0;
+            var client = _httpClientFactory.CreateClient();
+            var responseMessage = await client.GetAsync("http://localhost:5297/api/Contact");
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                var jsonData = await responseMessage.Content.ReadAsStringAsync();
+                var values = JsonConvert.DeserializeObject<List<GetMessageByIDDto>>(jsonData);
+                return View(values);
+            }
             return View();
         }
     }
