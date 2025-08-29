@@ -72,14 +72,14 @@ namespace HotelProject.WebUI.Controllers
         }
         public async Task<IActionResult> MessageDetails(int id)
         {
-            id = 0;
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync("http://localhost:5297/api/SendMessage/{id}");
+            var url = $"http://localhost:5297/api/SendMessage/{id}";
+            var responseMessage = await client.GetAsync(url);
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
-                var values = JsonConvert.DeserializeObject<List<GetMessageByIDDto>>(jsonData);
-                return View(values);
+                var value = JsonConvert.DeserializeObject<GetMessageByIDDto>(jsonData);
+                return View(value);
             }
             return View();
         }

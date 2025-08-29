@@ -19,7 +19,8 @@
 		</div>
 	</div>
 
-
+	@if (Model != null)
+    {
     <div class="read-content">
         <div class="media pt-5">
             <img class="mr-3 rounded-circle" src="~/adminweb/images/avatar/1.jpg">
@@ -37,10 +38,12 @@
         </div>
         <p>@Model.Content</p>
         <hr>
-        <div class="form-group p-t-15">
-            <textarea class="w-100 p-20 l-border-1" name="" id="" cols="30" rows="5" placeholder="It's really an amazing.I want to know more about it..!"></textarea>
-        </div>
     </div>
+    }
+    else
+    {
+	<h3>Mesaj bulunamadı</h3>
+    }
 </div>
 
 
