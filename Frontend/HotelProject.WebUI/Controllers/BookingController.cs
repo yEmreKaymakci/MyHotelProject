@@ -3,9 +3,11 @@ using HotelProject.WebUI.Dtos.BookingDto;
 using HotelProject.EntityLayer.Concrete; // Entity için gerekli
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using Microsoft.AspNetCore.Authorization;
 
 namespace HotelProject.WebUI.Controllers
 {
+    [AllowAnonymous]
     public class BookingController : Controller
     {
         private readonly IHttpClientFactory _httpClientFactory;
