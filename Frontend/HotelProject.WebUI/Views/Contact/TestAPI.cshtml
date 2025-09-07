@@ -1,0 +1,35 @@
+﻿
+@{
+    Layout = null;
+}
+
+<h2>API Test Sonuçları</h2>
+
+@if (ViewBag.Error != null)
+{
+    <div class="alert alert-danger">
+        <strong>Hata:</strong> @ViewBag.Error
+    </div>
+}
+
+<div class="card mb-3">
+    <div class="card-header">
+        <h4>GET /api/Contact Test</h4>
+    </div>
+    <div class="card-body">
+        <p><strong>Status:</strong> @ViewBag.GetStatus</p>
+        <p><strong>Content:</strong></p>
+        <pre>@ViewBag.GetContent</pre>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h4>POST /api/Contact Test</h4>
+    </div>
+    <div class="card-body">
+        <p><strong>Status:</strong> @ViewBag.PostStatus</p>
+        <p><strong>Content:</strong></p>
+        <pre>@ViewBag.PostContent</pre>
+    </div>
+</div>

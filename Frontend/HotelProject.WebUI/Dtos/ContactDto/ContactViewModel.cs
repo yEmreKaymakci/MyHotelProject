@@ -1,9 +1,8 @@
-﻿using HotelProject.EntityLayer.Concrete;
-using Microsoft.AspNetCore.Mvc.Rendering;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace HotelProject.WebUI.Dtos.ContactDto
 {
-    public class CreateContactDto
+    public class ContactViewModel
     {
         public string Name { get; set; }
         public string Mail { get; set; }
@@ -11,6 +10,6 @@ namespace HotelProject.WebUI.Dtos.ContactDto
         public string Message { get; set; }
         public DateTime Date { get; set; }
         public int MessageCategoryID { get; set; }
-        public MessageCategory MessageCategory { get; set; }
+        public List<SelectListItem> MessageCategories { get; set; } = new List<SelectListItem>();
     }
 }
