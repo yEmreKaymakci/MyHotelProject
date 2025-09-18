@@ -1,4 +1,4 @@
-﻿    using System.Text;
+﻿using System.Text;
 using HotelProject.WebUI.Dtos.ContactDto;
 using HotelProject.WebUI.Dtos.SendMessageDto;
 using HotelProject.WebUI.Models.Staff;
@@ -121,5 +121,6 @@ namespace HotelProject.WebUI.Controllers
             }
             return View();
         }
+
     }
 }

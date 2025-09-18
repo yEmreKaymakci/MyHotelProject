@@ -1,7 +1,8 @@
-﻿using HotelProject.BusinessLayer.Abstract;
+﻿using HotelProject.DataAccessLayer.Concrete;
 using HotelProject.EntityLayer.Concrete;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace HotelProject.WebApi.Controllers
 {
@@ -9,43 +10,26 @@ namespace HotelProject.WebApi.Controllers
     [ApiController]
     public class MessageCategoryController : ControllerBase
     {
-        private readonly IMessageCategoryService _messageCategoryService;
+        private readonly Context _context;
 
-        public MessageCategoryController(IMessageCategoryService messageCategoryService)
+        public MessageCategoryController(Context context)
         {
-            _messageCategoryService = messageCategoryService;
+            _context = context;
         }
 
         [HttpGet]
-        public IActionResult MessageCategoryList()
+        public async Task<ActionResult<IEnumerable<MessageCategory>>> GetMessageCategories()
         {
-            var values = _messageCategoryService.TGetList();
-            return Ok(values);
+            return await _context.MessageCategories.ToListAsync();
         }
-        [HttpPost]
-        public IActionResult AddMessageCategory(MessageCategory messageCategory)
-        {
-            _messageCategoryService.TInsert(messageCategory);
-            return Ok();
-        }
-        [HttpDelete("{id}")]
-        public IActionResult DeleteMessageCategory(int id)
-        {
-            var values = _messageCategoryService.TGetByID(id);
-            _messageCategoryService.TDelete(values);
-            return Ok();
-        }
-        [HttpPut]
-        public IActionResult UpdateMessageCategory(MessageCategory messageCategory)
-        {
-            _messageCategoryService.TUpdate(messageCategory);
-            return Ok();
-        }
+
         [HttpGet("{id}")]
-        public IActionResult GetMessageCategory(int id)
+        public async Task<ActionResult<MessageCategory>> GetMessageCategory(int id)
         {
-            var values = _messageCategoryService.TGetByID(id);
-            return Ok(values);
+            var category = await _context.MessageCategories.FindAsync(id);
+            if (category == null)
+                return NotFound();
+            return category;
         }
     }
 }

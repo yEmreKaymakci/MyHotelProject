@@ -1,7 +1,7 @@
 ﻿@model GetMessageByIDDto
 @{
-    ViewData["Title"] = "MessageDetails";
-    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+	ViewData["Title"] = "MessageDetails";
+	Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
 }
 
 <div class="email-left-box">
@@ -20,30 +20,30 @@
 	</div>
 
 	@if (Model != null)
-    {
-    <div class="read-content">
-        <div class="media pt-5">
-            <img class="mr-3 rounded-circle" src="~/adminweb/images/avatar/1.jpg">
-            <div class="media-body">
-                <h5 class="m-b-3">@Model.ReceiverName</h5>
-                <p class="m-b-2">@(((DateTime)Model.Date).ToString("dd-MMM-yyyy"))</p>
-            </div>
+	{
+		<div class="read-content">
+			<div class="media pt-5">
+				<img class="mr-3 rounded-circle" src="~/adminweb/images/avatar/1.jpg">
+				<div class="media-body">
+					<h5 class="m-b-3">@Model.ReceiverName</h5>
+					<p class="m-b-2">@(((DateTime)Model.Date).ToString("dd-MMM-yyyy"))</p>
+				</div>
 
-        </div>
-        <hr>
-        <div class="media mb-4 mt-1">
-            <div class="media-body">
-                <h4 class="m-0 text-primary">@Model.Title</h4><small class="text-muted">Kime:@Model.ReceiverMail</small>
-            </div>
-        </div>
-        <p>@Model.Content</p>
-        <hr>
-    </div>
-    }
-    else
-    {
-	<h3>Mesaj bulunamadı</h3>
-    }
+			</div>
+			<hr>
+			<div class="media mb-4 mt-1">
+				<div class="media-body">
+					<h4 class="m-0 text-primary">@Model.Title</h4><small class="text-muted">Kime:@Model.ReceiverMail</small>
+				</div>
+			</div>
+			<p>@Model.Content</p>
+			<hr>
+		</div>
+	}
+	else
+	{
+		<h3>Mesaj bulunamadı</h3>
+	}
 </div>
 
 

@@ -1,7 +1,9 @@
 ﻿using HotelProject.BusinessLayer.Abstract;
+using HotelProject.DataAccessLayer.Concrete;
 using HotelProject.EntityLayer.Concrete;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace HotelProject.WebApi.Controllers
 {
@@ -9,7 +11,7 @@ namespace HotelProject.WebApi.Controllers
     [ApiController]
     public class ContactController : ControllerBase
     {
-        private readonly  IContactService _contactService;
+        private readonly IContactService _contactService;
         public ContactController(IContactService contactService)
         {
             _contactService = contactService;
@@ -40,6 +42,8 @@ namespace HotelProject.WebApi.Controllers
         {
             return Ok(_contactService.TGetContactCount());
         }
+
+       
 
     }
 }
