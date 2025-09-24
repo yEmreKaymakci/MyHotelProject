@@ -12,6 +12,7 @@ namespace HotelProject.DataAccessLayer.Concrete
 {
     public class Context : IdentityDbContext<AppUser, AppRole, int>
     {
+
         //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         //{
         //    optionsBuilder.UseSqlServer("server=DESKTOP-NH5EP7F\\YUNUSSQLSERVER;initial catalog=ApiDb;integrated security=true");
