@@ -9,25 +9,24 @@ namespace HotelProject.WebApi.Controllers
     public class AppUserController : ControllerBase
     {
         private readonly IAppUserService _appUserService;
+
         public AppUserController(IAppUserService appUserService)
         {
             _appUserService = appUserService;
         }
 
-        [HttpGet]
-        //public IActionResult UserListWithWorkLocation()
+        //[HttpGet]
+        //public IActionResult AppUserList()
         //{
-        //    var values = _appUserService.TUserListWithWorkLocation();
+        //    var values = _appUserService.TGetList();
         //    return Ok(values);
         //}
 
         [HttpGet]
-        public IActionResult AppUserList()
+        public IActionResult UserListWithWorkLocation()
         {
             var values = _appUserService.TUserListWithWorkLocation();
             return Ok(values);
         }
     }
-
-
 }

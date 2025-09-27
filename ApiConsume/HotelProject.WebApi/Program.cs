@@ -79,14 +79,12 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseAuthorization();
-
-app.MapControllers();
-
 //// HTTPS yönlendirmesi ekledim
 app.UseHttpsRedirection();
 
 app.UseCors("OtelApiCors");
+
+app.UseAuthorization();
 
 app.MapControllers();
 

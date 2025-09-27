@@ -11,7 +11,7 @@ namespace HotelProject.BusinessLayer.Concrete
 {
     public class AppUserManager : IAppUserService
     {
-        private readonly IAppUserDal  _appUserDal;
+        private readonly IAppUserDal _appUserDal;
 
         public AppUserManager(IAppUserDal appUserDal)
         {
@@ -20,27 +20,28 @@ namespace HotelProject.BusinessLayer.Concrete
 
         public void TDelete(AppUser t)
         {
-            throw new NotImplementedException();
+            _appUserDal.Delete(t);
         }
 
         public AppUser TGetByID(int id)
         {
-            throw new NotImplementedException();
+            return _appUserDal.GetByID(id);
         }
 
         public List<AppUser> TGetList()
         {
-            throw new NotImplementedException();
+            // Bu metod NotImplementedException fırlatıyordu, şimdi düzeltildi
+            return _appUserDal.GetList();
         }
 
         public void TInsert(AppUser t)
         {
-            throw new NotImplementedException();
+            _appUserDal.Insert(t);
         }
 
         public void TUpdate(AppUser t)
         {
-            throw new NotImplementedException();
+            _appUserDal.Update(t);
         }
 
         public List<AppUser> TUserListWithWorkLocation()
