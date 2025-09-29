@@ -12,6 +12,9 @@ namespace HotelProject.DataAccessLayer.Concrete
 {
     public class Context : IdentityDbContext<AppUser, AppRole, int>
     {
+        public Context()
+        {
+        }
 
         //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         //{
