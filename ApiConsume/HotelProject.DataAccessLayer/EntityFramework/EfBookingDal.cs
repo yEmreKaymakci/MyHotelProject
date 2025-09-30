@@ -39,6 +39,11 @@ namespace HotelProject.DataAccessLayer.EntityFramework
             }
         }
 
+        public int GetBookingCount()
+        {
+            return _context.Bookings.Count();
+        }
+
         // Insert metodunu kaldırın, GenericRepository'deki kullanılsın
     }
 }

@@ -12,9 +12,15 @@ namespace HotelProject.DataAccessLayer.EntityFramework
 {
     public class EfRoomDal : GenericRepository<Room>, IRoomDal
     {
+        private readonly Context _context;
         public EfRoomDal(Context context) : base(context)
         {
+            _context = context;
+        }
 
+        public int RoomCount()
+        {
+            return _context.Rooms.Count();
         }
     }
 }

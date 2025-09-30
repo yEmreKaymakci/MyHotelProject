@@ -53,5 +53,9 @@ namespace HotelProject.BusinessLayer.Concrete
         {
             return _appUserDal.UserListWithWorkLocations();
         }
+        public int TAppUserCount()
+        {
+            return _appUserDal.AppUserCount();
+        }
     }
 }

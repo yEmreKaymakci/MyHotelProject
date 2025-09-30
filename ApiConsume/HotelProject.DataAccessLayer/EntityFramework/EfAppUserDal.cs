@@ -20,6 +20,11 @@ namespace HotelProject.DataAccessLayer.EntityFramework
             _context = context; // Constructor'dan gelen context'i sakla
         }
 
+        public int AppUserCount()
+        {
+            return _context.Users.Count();
+        }
+
         public List<AppUser> UserListWithWorkLocation()
         {
             return _context.Set<AppUser>()
