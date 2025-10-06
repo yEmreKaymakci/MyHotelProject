@@ -1,4 +1,1 @@
-Onay Bekliyor
-Onaylandý
-Ýptal Edildi
-Bekletiliyor
+Rezervasyon sayfasý filtreleme iþlemleri
