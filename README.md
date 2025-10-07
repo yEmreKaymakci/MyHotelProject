@@ -10,8 +10,8 @@ Ayrıca,  özel **404 hata sayfası**, **Kayıt Olma Formu**, **Giriş Formu** v
 ## 🌟 Öne Çıkan Özellikler
 
 - 🏠 **Ana Sayfa** – Hızlı erişim ve etkileyici bir karşılama bölümü  
-- 📍 **Konumlar** – Popüler seyahat noktaları hakkında detaylı bilgiler  
-- 🧳 **Hizmetler** – Şirketin sunduğu tüm seyahat hizmetlerinin listesi  
+- 📍 **Api Entegrasyonu** – Api kullanılarak çekilen veriler web sayfasına entegre edilir.
+- 🧳 **Dinamik Yapı** – Veri tabanından çekilen veriler dinamik olarak web sayfasında gözükür.
 - 🤝 **Sponsorlar** – İş ortakları ve sponsorların tanıtımı  
 - 💬 **Mesajlar** – Gerçek kullanıcı geri bildirimleri  
 - 📬 **İletişim** – Kullanıcıların firmayla iletişime geçebileceği form  
