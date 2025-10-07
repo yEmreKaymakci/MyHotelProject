@@ -23,17 +23,18 @@ Ayrıca,  özel **404 hata sayfası**, **Kayıt Olma Formu**, **Giriş Formu** v
 
 ## 🛠️ Kullanılan Teknolojiler
 
-| 💡 Teknoloji           | ✅ Açıklama |
-|------------------------|------------|
-| 🖥️ ASP.NET MVC         | MVC mimarisiyle modüler yapı |
-| 🧱 Code First          | Veritabanını kodla oluşturma |
-| 🔍 LINQ               | Veri sorgulama ve filtreleme |
-| ✏️ CRUD               | Ekleme, listeleme, güncelleme, silme |
-| 🧩 Partial View        | Tekrarlayan bileşenlerin yönetimi |
-| 🎨 HTML, CSS, Bootstrap| Modern ve duyarlı tasarım |
-| ⚙️ JavaScript          | Dinamik kullanıcı etkileşimi |
-| 🧭 Layout              | Sayfa şablonlarının yapılandırılması |
-| 💾 MS SQL Server       | Verilerin güvenli şekilde saklanması |
+| 💡 Teknoloji                    | ✅ Açıklama |
+|---------------------------------|------------|
+| 🎯 .NET 6                       | Modern ve performanslı web framework'ü |
+| 🗄️ Entity Framework Core 6.0   | Code-First ile veritabanı yönetimi |
+| 💾 SQL Server                   | İlişkisel veritabanı yönetim sistemi |
+| 🔐 ASP.NET Core Identity        | Kullanıcı kimlik doğrulama ve yetkilendirme |
+| 🗺️ AutoMapper 12.0              | Nesne-nesne eşleştirme işlemleri |
+| 📄 Swagger/Swashbuckle          | RESTful API dokümantasyonu |
+| 📦 Newtonsoft.Json              | JSON serileştirme ve deserileştirme |
+| 🏗️ N-Tier Architecture          | Katmanlı mimari yapısı (Entity, DAL, BLL, DTO, UI) |
+| 🔌 RESTful API                  | HTTP protokolü ile veri alışverişi |
+| 🎨 Dependency Injection         | Gevşek bağlı ve test edilebilir kod yapısı |
 
 ---
 
@@ -56,45 +57,71 @@ Ayrıca,  özel **404 hata sayfası**, **Kayıt Olma Formu**, **Giriş Formu** v
 ## 🖼️ Proje Görselleri
 
 ## 🛠️ Admin Paneli
+
+### Kayıt Formu:
+![000](https://github.com/user-attachments/assets/8226c680-05bc-41d3-9fa4-060b1bbec73b)
+
+
 ### Giriş Paneli:
-![image](https://github.com/user-attachments/assets/90f2f943-531f-48e5-a5ba-a457bcd4d209)
+![0](https://github.com/user-attachments/assets/fc7eb237-acc3-4e62-a940-a40f003c46fe)
 
-### İstatistik Sayfası:
-![image](https://github.com/user-attachments/assets/fb293e54-2576-46af-9559-6196ffd5cf48)
+### 404 Sayfası:
+![00](https://github.com/user-attachments/assets/d9002361-0083-4e83-bd24-642c99c1bcf7)
 
-### Konumlar Sayfası:
-![image](https://github.com/user-attachments/assets/3edbc9e7-0b90-4dce-83c3-542c49c8c1ce)
 
-### Konum Oluşturma Sayfası:
-![image](https://github.com/user-attachments/assets/bd72ad4f-6b3e-41c6-9d6d-e98fc2d04a69)
+### Dashboard:
+![1](https://github.com/user-attachments/assets/1777792a-b300-4a4e-b014-217381904ad9)
 
-### Konum Güncelleme Sayfası:
-![image](https://github.com/user-attachments/assets/317bdc1f-5f0a-4b78-942e-4e32b5cde5ff)
+### Admin Rezervasyon Sayfası:
+![2](https://github.com/user-attachments/assets/f6f92866-fd7c-4fcf-8063-ab3ce1cc84c9)
 
-### Hizmet Arama Sayfası:
-![image](https://github.com/user-attachments/assets/33aeacdf-ae93-4fd8-8a29-bec14a05043e)
+### Admin Rezervasyon İşlemleri Sayfası:
+![3](https://github.com/user-attachments/assets/cd2a034f-5375-445b-a5fd-ecb34ab46dcf)
+
+### Giden Kutusu:
+![5](https://github.com/user-attachments/assets/18c19908-8287-4f07-8fc5-5507a606129d)
+
+### Gelen Kutusu:  
+![6](https://github.com/user-attachments/assets/8a470b61-400a-4f8a-acce-7a71e4232721)
+
+### Mail Gönderme İşlemleri
+![7](https://github.com/user-attachments/assets/998a2ee4-7ae5-44de-bf51-b5ee36209478)
+
+-------------------------------------------------------------------------------------------
+![8](https://github.com/user-attachments/assets/e1b64cb3-781c-43ce-b334-261eceb3bae8)
+
+### Dosya Yükleme Sayfası:
+![9](https://github.com/user-attachments/assets/51b763da-df7d-4422-9b99-77a2db9bc730)
+
+
+### Ayarlar Sayfası:
+![10](https://github.com/user-attachments/assets/3498dc8f-7c05-4bb3-ba07-53e094e4ab9a)
+
+
+
 
 
 ## Anasayfa:
-![image](https://github.com/user-attachments/assets/ae80475b-b1e8-4fc2-ad19-56e33b74b04b)
 
-## Hizmetler:
-![image](https://github.com/user-attachments/assets/e58b0a39-38c5-487e-b5c4-9e42f9605972)
 
-## Seyahatler:
-![image](https://github.com/user-attachments/assets/91a9004c-a07e-457a-9fed-89a73a2b6493)
+### Slider
+![d1](https://github.com/user-attachments/assets/01d36870-ae99-4649-a1bc-c6c40598cf19)
 
-## Kampanyalı Seyahatler:
-![image](https://github.com/user-attachments/assets/876e8d55-e64c-4ab5-891d-a2aeb7131240)
+### Hakkımızda Sayfası
+![d2](https://github.com/user-attachments/assets/604a39c6-15d8-4d02-a50e-5b2c13e11aac)
 
-## Hakkımızda:
-![image](https://github.com/user-attachments/assets/d04c66b1-6b62-4ff6-9526-c88ff4a5ddcb)
+### Odalarımız Sayfası
+![d3](https://github.com/user-attachments/assets/a37d147e-29b9-41b4-a88a-744d4adc2a2b)
 
-## Sponsorlar:
-![image](https://github.com/user-attachments/assets/a0e2b625-5f18-499a-b315-91da3c6f1730)
+### Referanslar Sayfası
+![d4](https://github.com/user-attachments/assets/0cf359e9-029d-483f-92df-aa3cbc85a9d6)
 
-## 404 Sayfası:
-![image](https://github.com/user-attachments/assets/76ac65de-11d5-459c-8ab1-bed60d01d39a)
+### Rezervasyon Sayfası
+![d5](https://github.com/user-attachments/assets/edfb1710-911a-4996-83ec-3120e672ca5f)
+
+### İletişim Sayfası
+![d6](https://github.com/user-attachments/assets/071ca1ff-bf5f-4bfa-a3d2-00f0f25befdb)
+
 
 
 
