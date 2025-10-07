@@ -11,11 +11,12 @@ Ayrıca,  özel **404 hata sayfası**, **Kayıt Olma Formu**, **Giriş Formu** v
 
 - 🏠 **Ana Sayfa** – Hızlı erişim ve etkileyici bir karşılama bölümü  
 - 📍 **Api Entegrasyonu** – Api kullanılarak çekilen veriler web sayfasına entegre edilir.
+- 💻 **Çok Katmanlı Mimari** – Uygulamanın veri, iş mantığı ve sunum katmanlarına ayrılarak kodun daha yönetilebilir, test edilebilir ve ölçeklenebilir hale gelmesini sağlar.
 - 🧳 **Dinamik Yapı** – Veri tabanından çekilen veriler dinamik olarak web sayfasında gözükür.
-- 🤝 **Sponsorlar** – İş ortakları ve sponsorların tanıtımı  
 - 💬 **Mesajlar** – Gerçek kullanıcı geri bildirimleri  
-- 📬 **İletişim** – Kullanıcıların firmayla iletişime geçebileceği form  
-- 🚫 **404 Sayfası** – Kişiselleştirilmiş ve kullanıcı dostu hata sayfası  
+- 📬 **İletişim** – Kullanıcıların otelle iletişime geçebileceği form  
+- 🚫 **404 Sayfası** – Kişiselleştirilmiş ve kullanıcı dostu hata sayfası
+- 🚪 **Kayıt Formu** – Yetkili kullanıcıların kayıt işlemlerini gerçekleştirdikleri sayfa
 - 🔐 **Giriş Paneli** – Yetkili kullanıcılar için güvenli giriş ekranı  
 
 ---
